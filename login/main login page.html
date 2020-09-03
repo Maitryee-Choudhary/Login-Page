@@ -1,0 +1,128 @@
+<html>
+<head><title>Log in</title>
+
+
+<link rel="stylesheet" type="text/css" href="sign.css">
+</head>
+<body>
+<div id="container">
+<hl style="font-family:large"><b><center>LOG IN</center></b>
+                  <form  action="a" onsubmit="return valid()">
+<div class="form-group">
+<label style="color:blue;font-size:x-large">Username</label><br>
+<input type="text"  class="form-control" id="user"><br><span id="u" style="color:red"></span><br><br></div> 
+
+
+<div class="form-group"><label style="color:blue;font-size:x-large">Password </label><br>
+<input type="password"  id="myInput"  class="form-control" ><br><span id="p" style="color:red"></span><br><br></div>
+
+<input type="checkbox" onclick="myFunction()">Show Password<br><br>
+
+
+
+
+
+
+
+
+
+
+<div class="form-group"><label style="color:blue;font-size:x-large"> Confirm Password </label><br>
+<input type="password"  id="con" class="form-control" ><br><span id="cp" style="color:red"></span><br><br></div>
+<input type="checkbox" onclick="G1()">Show Password<br><br>
+
+
+<div class="form-group"><label style="color:blue;font-size:x-large">Email id </label><br>
+<input type="text" class="form-control" id="em"><br><span id="e" style="color:red"></span><br><br></div>
+
+
+<input type="submit" value="submit">
+<input type="reset" value="reset">
+
+<script type="text/javascript">
+function myFunction() {
+  var x = document.getElementById("myInput");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+function G1() {
+  var x = document.getElementById("con");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+function valid(){
+var u1=document.getElementById("user").value; 
+var p1=document.getElementById("myInput").value;
+var c1=document.getElementById("con").value;
+var e1=document.getElementById("em").value;
+if(u1.length==0)
+{
+document.getElementById("u").innerHTML="**Please enter username";
+return false;}
+if(u1.length<=2)
+{
+document.getElementById("u").innerHTML="**Username must between 3 to 8 characters ";
+return false;}
+if(u1.length>=3)
+{
+document.getElementById("u").innerHTML="**Correct";
+document.getElementById("u").style.color="green";
+}
+if(!isNaN(u1))
+{
+document.getElementById("u").innerHTML="**Only characters are allowed ";
+return false;}
+if(p1.length==0)
+{
+document.getElementById("p").innerHTML="**Please enter password";
+return false;}
+if(p1.length<=6)
+{
+document.getElementById("p").innerHTML="**Password must between 7 to 10 characters ";
+return false;}
+if(p1.length>=7)
+{
+document.getElementById("p").innerHTML="**Correct";
+document.getElementById("p").style.color="green";
+}
+if(c1.length==0)
+{
+document.getElementById("cp").innerHTML="**Please enter confirm password";
+return false;}
+if(c1!=p1){
+document.getElementById("cp").innerHTML="**Password are not matching ";
+return false;}
+if(c1==p1)
+{
+document.getElementById("cp").innerHTML="**Correct";
+document.getElementById("cp").style.color="green";
+}
+if(e1.length==0)
+{
+document.getElementById("e").innerHTML="**Please enter email id";
+return false;}
+if(e1.indexOf('@')<=2)
+{
+document.getElementById("e").innerHTML="**Invalid position of @  in email id";
+return false;}
+if(e1.charAt(e1.length-4)!='.')
+{
+document.getElementById("e").innerHTML="**Invalid position of dot in email id";
+return false;}
+if(e1.charAt(e1.length-4)=='.')
+{
+document.getElementById("e").innerHTML="**Correct";
+document.getElementById("e").style.color="green";
+}
+}
+</script>
+
+</div>
+</body>
+</html>

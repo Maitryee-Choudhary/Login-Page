@@ -1,0 +1,15 @@
+#container{
+height: 725px;
+width: 460px;
+margin: 100px auto;
+background: white;
+box-shadow: 0 0 px rgba(0,0,0,0.1);
+border-radius: 20px;
+~webkit-border-radius: 20px;
+}
+body{
+font-family: Arial;
+background: green;
+background: ~webkit-linear-gradient(to left, blue, yellow);
+background: linear-gradient(to left, pink, orange);
+}
